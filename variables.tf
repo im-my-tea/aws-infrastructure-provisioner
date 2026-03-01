@@ -9,3 +9,15 @@ variable "repo_name" {
   type        = string
   default     = "terraform-app-repo"
 }
+
+variable "project_name" {
+  description = "Base name for resources"
+  type        = string
+  default     = "devops-portfolio"
+}
+
+variable "env" {
+  description = "Environment"
+  type        = string
+  default     = "prod"
+}
