@@ -1,4 +1,4 @@
-# 1. Create an S3 Bucket
+# Create an S3 Bucket
 resource "aws_s3_bucket" "my_bucket" {
   bucket = var.bucket_name
   
@@ -8,7 +8,7 @@ resource "aws_s3_bucket" "my_bucket" {
   }
 }
 
-# 2. Create an ECR Repository
+# Create an ECR Repository
 resource "aws_ecr_repository" "my_repo" {
   name                 = var.repo_name
   image_tag_mutability = "MUTABLE"
@@ -18,7 +18,7 @@ resource "aws_ecr_repository" "my_repo" {
   }
 }
 
-# 3. Output the results 
+# Output the results 
 output "bucket_id" {
   value = aws_s3_bucket.my_bucket.id
 }
