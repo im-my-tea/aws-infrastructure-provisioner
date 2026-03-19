@@ -86,3 +86,19 @@ terraform destroy # tears everything down
 
 - `terraform-aws-modules/vpc/aws` v5.0.0
 - `terraform-aws-modules/eks/aws` v19.15.3
+
+## GCP module — real terraform apply
+
+The `gcp/` folder contains an equivalent module targeting GCP instead of AWS.
+Provisions a VPC and GKE cluster using the `hashicorp/google` provider.
+
+Applied against real GCP infrastructure (`ayush-terraform-gcp` project) and
+destroyed same day after verification. Demonstrates provider portability —
+same Terraform patterns, different cloud.
+```bash
+cd gcp
+terraform init
+terraform plan
+terraform apply    # provisions VPC + GKE (~10 min)
+terraform destroy  # teardown when done
+```
